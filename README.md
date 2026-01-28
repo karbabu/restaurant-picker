@@ -1,4 +1,4 @@
-# ??? Restaurant Picker - Microservices Application
+# Restaurant Picker - Microservices Application
 
 [![Java](https://img.shields.io/badge/Java-17-orange.svg)](https://www.oracle.com/java/)
 [![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.2.0-brightgreen.svg)](https://spring.io/projects/spring-boot)
@@ -7,7 +7,7 @@
 
 A production-ready microservices application that helps teams collaboratively decide where to go for lunch using real-time notifications and random restaurant selection.
 
-## ?? Table of Contents
+##  Table of Contents
 
 - [Overview](#overview)
 - [Features](#features)
@@ -24,7 +24,7 @@ A production-ready microservices application that helps teams collaboratively de
 - [Contributing](#contributing)
 - [License](#license)
 
-## ?? Overview
+##  Overview
 
 **Restaurant Picker** is a distributed system built with microservices architecture that solves the common problem of team lunch decision-making. Users can create sessions, invite team members, submit restaurant suggestions, and let the system randomly select the winner.
 
@@ -39,7 +39,7 @@ A production-ready microservices application that helps teams collaboratively de
 - ? **Docker Support** - One-command deployment
 - ? **Interactive UI** - Built-in web interface for testing
 
-## ?? Features
+##  Features
 
 ### Core Functionality
 
@@ -73,7 +73,7 @@ A production-ready microservices application that helps teams collaboratively de
 - Global exception handling
 - Docker Compose orchestration
 
-## ??? Architecture
+## ? Architecture
 
 ### System Architecture
 ```
@@ -124,7 +124,7 @@ Client                    WebSocket Server              Channels
   ¦<---- Notifications ---------¦
 ```
 
-## ?? Technology Stack
+##  Technology Stack
 
 ### Backend
 - **Java 17** - Programming language
@@ -148,7 +148,7 @@ Client                    WebSocket Server              Channels
 - **Docker Compose** - Orchestration
 - **Swagger/OpenAPI 3.0** - API documentation
 
-## ?? Prerequisites
+##  Prerequisites
 
 Ensure you have the following installed:
 
@@ -167,7 +167,7 @@ Ensure you have the following installed:
 - [Docker Desktop](https://www.docker.com/products/docker-desktop/)
 - [Git](https://git-scm.com/downloads)
 
-## ?? Quick Start
+##  Quick Start
 
 ### 1. Clone Repository
 ```bash
@@ -208,7 +208,7 @@ curl http://localhost:8080/api/users | jq
 | User Service | http://localhost:8081 | Direct user API |
 | Session Service | http://localhost:8082 | Direct session API |
 
-## ?? API Documentation
+##  API Documentation
 
 ### Swagger UI
 
@@ -315,7 +315,7 @@ curl -s -X POST http://localhost:8080/api/sessions/$SESSION_ID/end \
 echo "Winner selected!"
 ```
 
-## ?? WebSocket Notifications
+##  WebSocket Notifications
 
 ### Three Notification Channels
 
@@ -413,7 +413,7 @@ curl -X POST http://localhost:8082/api/notifications/test/global
 4. Submit restaurants and watch real-time updates in both windows
 5. End session and see winner announcement
 
-## ?? Testing Guide
+##  Testing Guide
 
 ### Manual Testing Workflow
 
@@ -535,7 +535,7 @@ RESULT=$(curl -s -X POST http://localhost:8080/api/sessions/$SESSION_ID/end \
   -H "Content-Type: application/json" \
   -d "{\"userId\": \"$INITIATOR_ID\"}")
 WINNER=$(echo $RESULT | jq -r '.selectedRestaurant.restaurantName')
-echo "?? Winner: $WINNER"
+echo " Winner: $WINNER"
 
 # Verify cannot join ended session
 echo -e "\n${GREEN}6. Verifying ended session protection...${NC}"
@@ -558,7 +558,7 @@ chmod +x test-complete-flow.sh
 ./test-complete-flow.sh
 ```
 
-## ?? Configuration
+##  Configuration
 
 ### Environment Variables
 
@@ -656,7 +656,7 @@ Users are automatically loaded from `user-service/src/main/resources/users.csv`:
 
 To add more users, edit the CSV file and restart the user-service.
 
-## ?? Deployment
+##  Deployment
 
 ### Docker Compose (Production)
 ```bash
@@ -742,7 +742,7 @@ jobs:
         docker-compose push
 ```
 
-## ?? Troubleshooting
+##  Troubleshooting
 
 ### Common Issues
 
@@ -849,7 +849,7 @@ docker-compose logs -f --tail=100
 docker-compose logs > application.log
 ```
 
-## ?? Monitoring & Metrics
+##  Monitoring & Metrics
 
 ### Actuator Endpoints
 
@@ -888,7 +888,7 @@ Access metrics:
 http://localhost:8080/actuator/prometheus
 ```
 
-## ?? Contributing
+##  Contributing
 
 We welcome contributions! Please follow these steps:
 
@@ -930,7 +930,7 @@ Then open a pull request on GitHub.
 - Add JavaDoc for public methods
 - Include unit tests (target: 80% coverage)
 
-## ?? License
+##  License
 
 This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENSE) file for details.
 ```
@@ -949,7 +949,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ```
 
-## ?? Support
+##  Support
 
 ### Getting Help
 
@@ -968,7 +968,7 @@ Please include:
 - Expected vs actual behavior
 - Log files (`docker-compose logs`)
 
-## ?? Roadmap
+##  Roadmap
 
 ### Version 1.1 (Q2 2026)
 - [ ] User authentication with JWT
@@ -991,7 +991,7 @@ Please include:
 - [ ] Advanced analytics dashboard
 - [ ] Multi-tenancy support
 
-## ?? Acknowledgments
+##  Acknowledgments
 
 - Spring Boot team for the excellent framework
 - Docker for containerization platform
@@ -999,7 +999,7 @@ Please include:
 - Swagger for API documentation
 - All contributors who helped build this project
 
-## ?? Additional Resources
+##  Additional Resources
 
 - [Spring Boot Documentation](https://docs.spring.io/spring-boot/docs/current/reference/html/)
 - [Spring Cloud Gateway](https://spring.io/projects/spring-cloud-gateway)
