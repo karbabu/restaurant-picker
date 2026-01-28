@@ -1,0 +1,27 @@
+git init
+>echo "target/" >> .gitignore
+>echo "*.class" >> .gitignore
+>echo ".idea/" >> .gitignore
+git add .
+git commit -m "One commit: Spring Boot multi-module project with Docker support for capgemini-govtech"
+--------------------
+create repository in github
+create Personal Access Token at settings (look at top right) -> Developer Settings -> use classic option and for roles use "repo" full rights
+---------------
+>git remote set-url origin https://<<Your created PAT>>@github.com/karbabu (REPLACE WITH YOUR USER ID)/<<REPOSITORY NAME>>.git
+ 
+git push -u origin main
+ 
+after changing any file content can check the changed files by
+git status
+ 
+i changed one file for localhost to service name
+>git add  api-gateway/src/main/resources/application.yml
+ 
+Now commit the changes
+git commit -m "localhost replaced with url string in api-gateway application.yml"
+ 
+Now push the changes to remote repository
+>git push -u origin main
+ 
+Ensure changes are reflecting at remote repository

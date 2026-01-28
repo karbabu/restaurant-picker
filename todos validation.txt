@@ -1,0 +1,25 @@
+public class SessionController {
+
+    private final SessionService sessionService;
+
+    @PostMapping
+    public ResponseEntity<SessionDTO> createSession(@RequestBody Map<String, String> request) {
+        String userId = request.get("userId");
+        //to do only to allow only user who are allowed to create. Else show proper message.
+        //At present shows 500 internal error.
+        
+        //** java.lang.RuntimeException: User is not authorized to initiate a session
+        
+        SessionDTO session = sessionService.createSession(userId);
+        return ResponseEntity.status(HttpStatus.CREATED).body(session);
+    }
+    
+    ---
+        @Transactional
+        public SessionDTO createSession(String initiatorUserId) {
+            // Verify user can initiate session
+            boolean canInitiate = userServiceClient.canUserInitiateSession(initiatorUserId);
+            if (!canInitiate) {
+                throw new RuntimeException("User is not authorized to initiate a session");
+        }
+--------------------------------    

@@ -1,0 +1,7 @@
+# user-service/src/main/resources/users.csv
+username,email,canInitiateSession
+john.doe,john.doe@company.com,true
+jane.smith,jane.smith@company.com,true
+bob.wilson,bob.wilson@company.com,false
+alice.brown,alice.brown@company.com,true
+charlie.davis,charlie.davis@company.com,false
