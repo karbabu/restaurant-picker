@@ -30,14 +30,14 @@ A production-ready microservices application that helps teams collaboratively de
 
 ### Key Highlights
 
-- ? **Microservices Architecture** - Scalable, maintainable service design
-- ? **Real-time Notifications** - WebSocket-based instant updates via 3 channels
-- ? **RESTful APIs** - Complete Swagger/OpenAPI documentation
-- ? **Event-Driven** - Personal, session, and global notification streams
-- ? **Spring Batch Integration** - Automated data loading on startup
-- ? **Global Error Handling** - Consistent error responses across services
-- ? **Docker Support** - One-command deployment
-- ? **Interactive UI** - Built-in web interface for testing
+-  **Microservices Architecture** - Scalable, maintainable service design
+-  **Real-time Notifications** - WebSocket-based instant updates via 3 channels
+-  **RESTful APIs** - Complete Swagger/OpenAPI documentation
+-  **Event-Driven** - Personal, session, and global notification streams
+-  **Spring Batch Integration** - Automated data loading on startup
+-  **Global Error Handling** - Consistent error responses across services
+-  **Docker Support** - One-command deployment
+-  **Interactive UI** - Built-in web interface for testing
 
 ##  Features
 
@@ -73,7 +73,7 @@ A production-ready microservices application that helps teams collaboratively de
 - Global exception handling
 - Docker Compose orchestration
 
-## ? Architecture
+##  Architecture
 
 ### System Architecture
 ```
@@ -82,14 +82,14 @@ A production-ready microservices application that helps teams collaboratively de
 ¦  Web Browser | Mobile App | Postman/Swagger UI              ¦
 +-------------------------------------------------------------+
                         ¦
-                        ?
+                        ¦
 +-------------------------------------------------------------+
 ¦                  API GATEWAY (:8080)                        ¦
 ¦  • Routing          • Error Handling                        ¦
 ¦  • Swagger UI       • Static Frontend                       ¦
 +-------------------------------------------------------------+
             ¦                     ¦
-    +-------?--------+    +------?----------+
+    +-------¦--------+    +------¦----------+
     ¦  User Service  ¦    ¦ Session Service ¦
     ¦     :8081      ¦    ¦      :8082      ¦
     ¦                ¦    ¦                 ¦
@@ -99,7 +99,7 @@ A production-ready microservices application that helps teams collaboratively de
     +----------------+    +-----------------+
             ¦                    ¦
             +--------------------+
-                       ?
+                       ¦
               +----------------+
               ¦   PostgreSQL   ¦
               ¦     :5432      ¦
@@ -502,7 +502,7 @@ echo -e "\n${GREEN}2. Joining session...${NC}"
 curl -s -X POST http://localhost:8080/api/sessions/$SESSION_ID/join \
   -H "Content-Type: application/json" \
   -d "{\"userId\": \"$PARTICIPANT_ID\"}" > /dev/null
-echo "? Participant joined"
+echo "Participant joined"
 
 # Submit restaurants
 echo -e "\n${GREEN}3. Submitting restaurants...${NC}"
@@ -513,7 +513,7 @@ curl -s -X POST http://localhost:8080/api/sessions/$SESSION_ID/submit \
     \"address\": \"123 Main St\",
     \"submittedByUserId\": \"$INITIATOR_ID\"
   }" > /dev/null
-echo "? Restaurant 1 submitted"
+echo "Restaurant 1 submitted"
 
 curl -s -X POST http://localhost:8080/api/sessions/$SESSION_ID/submit \
   -H "Content-Type: application/json" \
@@ -522,7 +522,7 @@ curl -s -X POST http://localhost:8080/api/sessions/$SESSION_ID/submit \
     \"address\": \"456 Oak Ave\",
     \"submittedByUserId\": \"$PARTICIPANT_ID\"
   }" > /dev/null
-echo "? Restaurant 2 submitted"
+echo " Restaurant 2 submitted"
 
 # View submissions
 echo -e "\n${GREEN}4. Viewing submissions...${NC}"
@@ -543,9 +543,9 @@ ERROR=$(curl -s -X POST http://localhost:8080/api/sessions/$SESSION_ID/join \
   -H "Content-Type: application/json" \
   -d "{\"userId\": \"another-user\"}")
 if echo $ERROR | grep -q "ended"; then
-  echo "? Correctly blocked joining ended session"
+  echo " Correctly blocked joining ended session"
 else
-  echo -e "${RED}? Error: Should not allow joining ended session${NC}"
+  echo -e "${RED} Error: Should not allow joining ended session${NC}"
   exit 1
 fi
 
@@ -648,11 +648,11 @@ Users are automatically loaded from `user-service/src/main/resources/users.csv`:
 
 | Username | Email | Can Initiate Sessions |
 |----------|-------|----------------------|
-| john.doe | john.doe@company.com | ? Yes |
-| jane.smith | jane.smith@company.com | ? Yes |
-| bob.wilson | bob.wilson@company.com | ? No |
-| alice.brown | alice.brown@company.com | ? Yes |
-| charlie.davis | charlie.davis@company.com | ? No |
+| john.doe | john.doe@company.com |  Yes |
+| jane.smith | jane.smith@company.com |  Yes |
+| bob.wilson | bob.wilson@company.com |  No |
+| alice.brown | alice.brown@company.com |  Yes |
+| charlie.davis | charlie.davis@company.com |  No |
 
 To add more users, edit the CSV file and restart the user-service.
 
