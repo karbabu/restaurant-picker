@@ -171,7 +171,7 @@ Ensure you have the following installed:
 
 ### 1. Clone Repository
 ```bash
-git clone https://github.com/karbabu/demo-with-notify.git
+git clone https://github.com/karbabu/restaurant-picker.git
 cd restaurant-picker
 ```
 
@@ -894,7 +894,7 @@ We welcome contributions! Please follow these steps:
 
 ### 1. Fork the Repository
 ```bash
-git clone https://github.com/karbabu/demo-with-notify.git
+git clone https://github.com/karbabu/restaurant-picker.git
 cd restaurant-picker
 ```
 
